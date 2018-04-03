@@ -21,14 +21,14 @@ public class CameraControl : MonoBehaviour {
         move.x = Input.GetAxis("Horizontal");
         move.y = Input.GetAxis("Vertical");
 
-        newX += move.x;
-        newY += move.y;
+        newX += move.x * 0.5f;
+        newY += move.y * 0.5f;
 
         if(Input.GetButton("ResetCamera"))
         {
             Debug.Log("Space pressed");
-            newX = 0;
-            newY = 0;
+            newX = 4.5f;
+            newY = 5.5f;
         }
 
         tf.position = new Vector3(newX, newY, -10);
