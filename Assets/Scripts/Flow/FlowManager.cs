@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlowManager : MonoBehaviour {
+public class FlowManager {
     public enum SceneNames { MainMenu, MainScene}
 
     #region Singleton
