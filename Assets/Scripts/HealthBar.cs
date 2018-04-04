@@ -8,6 +8,7 @@ public class HealthBar : MonoBehaviour {
     public float current_Health = 0f;
     public GameObject healthbar;
     public float calc_health;
+    public float min_health = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,9 @@ public class HealthBar : MonoBehaviour {
 
     void DecreasedHealth()
     {
-        current_Health -= 2;
+        if(current_Health>min_health)
+                    current_Health -= 4;
+
         calc_health = current_Health / max_health;
         SetHealthBar(calc_health);
     }
