@@ -113,27 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &83936593 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1133462462154518, guid: 37ebc0d1d500511449236dda311a9476,
-    type: 2}
-  m_PrefabInternal: {fileID: 1370737508}
 --- !u!4 &83936594 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4383211195776252, guid: 37ebc0d1d500511449236dda311a9476,
     type: 2}
   m_PrefabInternal: {fileID: 1370737508}
---- !u!114 &83936595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 83936593}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01aef1472699ba44b886d5b331687711, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &168859051
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +893,7 @@ MonoBehaviour:
   healthbar: {fileID: 562750850}
   calc_health: 0
   min_health: 0
+  go: {fileID: 1266607008}
 --- !u!1 &652423119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1616,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1266607008}
+  health: 100
+  actionPoint: 6
 --- !u!1001 &1370737508
 Prefab:
   m_ObjectHideFlags: 0
@@ -2041,6 +2028,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thePlayer: {fileID: 1558330549}
+  health: 100
+  actionPoint: 6
 --- !u!1 &1584069912
 GameObject:
   m_ObjectHideFlags: 0
