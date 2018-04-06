@@ -5,15 +5,41 @@ using UnityEngine.Tilemaps;
 
 public class Player : MonoBehaviour {
 
-    Tile player;
+    public GameObject thePlayer;
 
-	// Use this for initialization
+    Vector3 position;
+    Vector3 newPos;
+    //Vector3Int tilePos;
+
+    //bool myTurn;
+    
+    // Use this for initialization
 	void Start () {
-        player = ScriptableObject.CreateInstance<PlayerTile>();
+        
+        //tilePos = gt.TileClicked(position);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void Update()
+    {
+        if (Input.GetMouseButtonUp(0))
+        {
+            position = thePlayer.transform.position;
+            if (Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y) <= 5)
+            {
+                SetPlayerTile(Input.mousePosition);
+            }
+            newPos = position;
+            Debug.Log(Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y));
+        }
+    }
+
+    public void SetPlayerTile(Vector3 newPos)
+    {
+        Vector3 playerPos = newPos;
+        playerPos = GridTest.Instance.TileClicked(playerPos); 
+        playerPos.x += 72.6f;
+        playerPos.y += 19.1f;
+
+        thePlayer.transform.position = playerPos;
+    }
 }
