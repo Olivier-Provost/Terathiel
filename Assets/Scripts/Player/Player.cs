@@ -1,20 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
+public class Player : MonoBehaviour {
 
-public class Player  {
-    public float health;
-    public float actionPoint;
-    public Vector3 position;
+    Tile player;
 
-    public Player(float _health, float _AP, Vector3 _pos)
-    {
-        health = _health;
-        actionPoint = _AP;
-        position = _pos;
-    }
-
-
+	// Use this for initialization
+	void Start () {
+        player = ScriptableObject.CreateInstance<PlayerTile>();
+	}
 	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }
