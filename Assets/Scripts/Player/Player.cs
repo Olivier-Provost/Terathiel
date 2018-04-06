@@ -9,27 +9,30 @@ public class Player : MonoBehaviour {
 
     Vector3 position;
     Vector3 newPos;
-    //Vector3Int tilePos;
 
     //bool myTurn;
-    
-    // Use this for initialization
-	void Start () {
-        
-        //tilePos = gt.TileClicked(position);
-	}
+
+    void Start()
+    {
+        position = new Vector3(3, 3, 0);
+    }
 
     void Update()
     {
         if (Input.GetMouseButtonUp(0))
         {
-            position = thePlayer.transform.position;
-            if (Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y) <= 5)
+            Vector3 mp = Input.mousePosition;
+            Debug.Log(mp);
+            if (mp.x >= 238 && mp.x <= 874 && mp.y >= 93 && mp.y <= 337)
             {
-                SetPlayerTile(Input.mousePosition);
+                newPos = GridTest.Instance.TileClicked(Input.mousePosition);
+                if ((Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y)) <= 5)
+                {
+                    SetPlayerTile(Input.mousePosition);
+                    position = newPos;
+                }
+                Debug.Log(Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y));
             }
-            newPos = position;
-            Debug.Log(Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y));
         }
     }
 
@@ -41,5 +44,10 @@ public class Player : MonoBehaviour {
         playerPos.y += 19.1f;
 
         thePlayer.transform.position = playerPos;
+    }
+
+    public Vector3 GetPlayerPosition()
+    {
+        return position;
     }
 }
