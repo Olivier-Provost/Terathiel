@@ -16,6 +16,7 @@ public class Ability {
 
     }
     
+
   public BasicObjectInformation AbilityInfo
     {
         get { return objectInfo;}
@@ -23,12 +24,12 @@ public class Ability {
 
   
 
-    public virtual void UsedAbility()
+    public virtual void UsedAbility(Vector3 location)
     {
         
     }
 
-    public bool CheckValid(Vector2Int loc)
+    public bool CheckValid(Vector3 loc)
     {
      bool isValid = true;
 

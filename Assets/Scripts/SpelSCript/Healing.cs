@@ -12,6 +12,6 @@ public class Healing : Ability
 
     public Healing(List<string> validTargets) :base(new BasicObjectInformation(aName, aDescription, actionPointCost, rangeOfAction), validTargets)
     {
-    
+        Debug.Log("spell type working Healing !");
     }
 }

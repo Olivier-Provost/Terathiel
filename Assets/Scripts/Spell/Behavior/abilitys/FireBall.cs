@@ -9,14 +9,16 @@ public class FireBall :Ability {
     private const float actionPointCost = 3f;
     private const float rangeOfAction = 6f;
     private const float BAseEffectDamage = 10f;
-   
 
 
+    public override void UsedAbility(Vector3 location)
+    {
+        
+    }
     public FireBall(List<string> validTargets): base(new BasicObjectInformation(aName,aDescription,actionPointCost,rangeOfAction), validTargets)
     {
-
-       
-      
+        
+        Debug.Log("spell type working Fireball !");
     }
 	
 

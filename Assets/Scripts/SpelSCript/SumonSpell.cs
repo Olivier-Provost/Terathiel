@@ -12,6 +12,6 @@ public class SumonSpell : Ability
 
     public SumonSpell(List<string> validTargets) : base(new BasicObjectInformation(aName, aDescription, actionPointCost, rangeOfAction), validTargets)
     {
-
+        Debug.Log("spell type working Sumon a big rock !");
     }
 }
