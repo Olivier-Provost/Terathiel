@@ -13,12 +13,19 @@ public class FireBall :Ability {
 
     public override void UsedAbility(Vector3 location)
     {
+        if (CheckValid(location))
+        {
+            GameObject go= new GameObject(); //gridtest.instance.getobjatloc
+            go.GetComponent<Player>().actionPoint -= actionPointCost;
+            go.GetComponent<Player>().Health-=BAseEffectDamage;
+          
         
+        }
     }
     public FireBall(List<string> validTargets): base(new BasicObjectInformation(aName,aDescription,actionPointCost,rangeOfAction), validTargets)
     {
         
-        Debug.Log("spell type working Fireball !");
+        Debug.Log("spell type working Fireball ! ");
     }
 	
 

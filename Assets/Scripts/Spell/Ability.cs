@@ -26,7 +26,7 @@ public class Ability {
 
     public virtual void UsedAbility(Vector3 location)
     {
-        
+       
     }
 
     public bool CheckValid(Vector3 loc)
