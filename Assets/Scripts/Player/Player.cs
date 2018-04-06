@@ -6,7 +6,8 @@ using UnityEngine.Tilemaps;
 public class Player : MonoBehaviour {
 
     public GameObject thePlayer;
-
+    public float Health = 100f;
+    public float actionPoint = 6f;
     Vector3 position;
     Vector3 newPos;
     //Vector3Int tilePos;
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetMouseButtonUp(0))
         {
+
             position = thePlayer.transform.position;
             if (Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y) <= 5)
             {

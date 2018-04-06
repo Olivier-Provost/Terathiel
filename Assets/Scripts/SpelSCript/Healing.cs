@@ -8,7 +8,19 @@ public class Healing : Ability
     private const string aDescription = "A healing spell to grow up your life ";
     private const float actionPointCost = 3f;
     private const float rangeOfAction = 6f;
-    private const float BAseEffectHealing = 8f;
+    private const float baseEffectHealing = 8f;
+
+    public override void UsedAbility(Vector3 location)
+    {
+        if (CheckValid(location))
+        {
+            GameObject go = new GameObject(); //gridtest.instance.getobjatloc
+            go.GetComponent<Player>().actionPoint -= actionPointCost;
+            go.GetComponent<Player>().Health += baseEffectHealing;
+
+
+        }
+    }
 
     public Healing(List<string> validTargets) :base(new BasicObjectInformation(aName, aDescription, actionPointCost, rangeOfAction), validTargets)
     {
