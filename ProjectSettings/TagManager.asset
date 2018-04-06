@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Grid
-  - 
+  - Player
   - 
   - 
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Tilemap
     uniqueID: 626647479
+    locked: 0
+  - name: Player
+    uniqueID: 186119613
     locked: 0

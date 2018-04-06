@@ -3,25 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class GridTest : MonoBehaviour {
+public class GridTest  {
     
     Tilemap tm;
     Vector3Int tilePos;
 
-    void Start()
-    {
-        tm = GetComponent<Tilemap>();
+    #region Singleton
+    private static GridTest instance;
+
+    private GridTest() {
+        tm = GameObject.FindObjectOfType<Tilemap>();
     }
 
-    void Update()
+    public static GridTest Instance
     {
-        if (Input.GetMouseButtonUp(0))
+        get
         {
-            Debug.Log(TileClicked(Input.mousePosition));
+            if (instance == null)
+            {
+                instance = new GridTest();
+            }
+            return instance;
         }
-        //Debug.Log(grid.cellLayout);
     }
-
+    #endregion
+    
     public Vector3Int TileClicked(Vector3 mousePositionOnClick)
     {
         Vector3Int tilePos;
