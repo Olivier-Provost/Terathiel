@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Healing : Spell
+public class Healing : Ability
 {
+    private const string aName = "Healing";
+    private const string aDescription = "A healing spell to grow up your life ";
+    private const float actionPointCost = 3f;
+    private const float rangeOfAction = 6f;
+    private const float BAseEffectHealing = 8f;
 
-    public Healing(string spellname, int _acCost, int _range) : base(spellname, _acCost, _range)
+    public Healing(List<string> validTargets) :base(new BasicObjectInformation(aName, aDescription, actionPointCost, rangeOfAction), validTargets)
     {
-        spellName = spellname;
-        ActionPointCost = _acCost;
-        range = _range;
+    
     }
 }
