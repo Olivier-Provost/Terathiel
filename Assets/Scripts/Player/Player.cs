@@ -24,18 +24,13 @@ public class Player : MonoBehaviour {
     {
         if (Input.GetMouseButtonUp(0))
         {
-            Vector3 mp = Input.mousePosition;
-            Debug.Log(mp);
-            if (mp.x >= 238 && mp.x <= 874 && mp.y >= 93 && mp.y <= 337)
+            newPos = GridTest.Instance.TileClicked(Input.mousePosition);
+            if ((Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y)) <= 5)
             {
-                newPos = GridTest.Instance.TileClicked(Input.mousePosition);
-                if ((Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y)) <= 5)
-                {
-                    SetPlayerTile(Input.mousePosition);
-                    position = newPos;
-                }
-                Debug.Log(Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y));
+                SetPlayerTile(Input.mousePosition);
+                position = newPos;
             }
+            Debug.Log(Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y));
         }
     }
 
