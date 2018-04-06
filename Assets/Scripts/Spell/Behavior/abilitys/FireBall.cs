@@ -17,7 +17,7 @@ public class FireBall :Ability {
         {
             GameObject go= new GameObject(); //gridtest.instance.getobjatloc
             go.GetComponent<Player>().actionPoint -= actionPointCost;
-            go.GetComponent<Player>().Health-=BAseEffectDamage;
+            go.GetComponent<Player>().health-=BAseEffectDamage;
           
         
         }

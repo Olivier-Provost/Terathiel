@@ -7,6 +7,9 @@ public class Player : MonoBehaviour {
 
     public GameObject thePlayer;
 
+    public float health = 100f;
+    public float actionPoint = 6f;
+    
     Vector3 position;
     Vector3 newPos;
 

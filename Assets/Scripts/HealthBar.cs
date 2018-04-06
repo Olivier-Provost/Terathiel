@@ -12,8 +12,9 @@ public class HealthBar : MonoBehaviour {
     public GameObject go;
 	// Use this for initialization
 	void Start () {
-        current_Health =  go.GetComponent<Player>().Health;
-       // current_Health = max_health;
+        current_Health =  go.GetComponent<Player>().health;
+
+        // current_Health = max_health;
         //InvokeRepeating("DecreasedHealth", 1f, 1f);
 	}
 	

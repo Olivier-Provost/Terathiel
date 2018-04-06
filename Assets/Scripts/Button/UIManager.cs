@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UIManager : MonoBehaviour {
+    Ability selectedAbiltity;
+
 
 	// Use this for initialization
 	void Start () {
@@ -13,12 +15,15 @@ public class UIManager : MonoBehaviour {
 	void Update () {
         //Input.GetMouseButtonDown(0);
         //Input.mousePosition;
+
 	}
 
     public void SpellButtonPressed(string spell)
     {
         AbilityManager.SpellType spellEnum = (AbilityManager.SpellType)System.Enum.Parse(typeof(AbilityManager.SpellType), spell);
-        AbilityManager.Instance.SelectAbility(spellEnum);
+
+
+        selectedAbiltity = AbilityManager.Instance.SelectAbility(spellEnum);
 
         Debug.Log("spell type working " + spell.ToString());
     }

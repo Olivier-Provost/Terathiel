@@ -16,7 +16,7 @@ public class Healing : Ability
         {
             GameObject go = new GameObject(); //gridtest.instance.getobjatloc
             go.GetComponent<Player>().actionPoint -= actionPointCost;
-            go.GetComponent<Player>().Health += baseEffectHealing;
+            go.GetComponent<Player>().health += baseEffectHealing;
 
 
         }
