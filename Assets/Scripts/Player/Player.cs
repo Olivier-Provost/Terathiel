@@ -48,4 +48,9 @@ public class Player : MonoBehaviour {
     {
         return position;
     }
+
+    public void upDateAP(float cost)
+    {
+        actionPoint -= cost;
+    }
 }

@@ -28,4 +28,5 @@ public class UIManager : MonoBehaviour {
         Debug.Log("spell type working " + spell.ToString());
     }
 
+    
 }
