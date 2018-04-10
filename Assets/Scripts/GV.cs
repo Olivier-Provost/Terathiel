@@ -10,10 +10,10 @@ public class GV {
     public enum SPELL_TYPE { FIREBALL, HEALING, SPAWN };
 
     //Déplacement
-    public static readonly string MOVING_RANGE_TAG = "MovementRange";
-    public static readonly string HEALING_RANGE_TAG = "HealingRange";
-    public static readonly string FIREBALL_RANGE_TAG = "FireballRange";
-    public static readonly string SPAWN_RANGE_TAG = "SpawnRange";
+    public static readonly string MOVING_TAG = "MovementRange";
+    public static readonly string HEALING_TAG = "HealingRange";
+    public static readonly string FIREBALL_TAG = "FireballRange";
+    public static readonly string SPAWN_TAG = "SpawnRange";
 
     //Players
     public static readonly string PLAYER1_TAG = "Player1";

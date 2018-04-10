@@ -27,7 +27,7 @@ public class CameraControl : MonoBehaviour {
         if(Input.GetButton("ResetCamera"))
         {
             Debug.Log("Space pressed");
-            newX = 10;
+            newX = 85;
             newY = 11;
         }
 
