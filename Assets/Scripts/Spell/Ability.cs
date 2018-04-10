@@ -32,9 +32,9 @@ public class Ability {
     public bool CheckValid(Vector3 loc)
     {
      bool isValid = true;
-
+    
         //vector2int griloca = gridmanager.instance.grabLocation;
-        //
+        
         return isValid;
     }
 
