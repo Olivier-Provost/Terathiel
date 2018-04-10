@@ -27,8 +27,8 @@ public class CameraControl : MonoBehaviour {
         if(Input.GetButton("ResetCamera"))
         {
             Debug.Log("Space pressed");
-            newX = 83;
-            newY = 30;
+            newX = 10;
+            newY = 11;
         }
 
         tf.position = new Vector3(newX, newY, -10);

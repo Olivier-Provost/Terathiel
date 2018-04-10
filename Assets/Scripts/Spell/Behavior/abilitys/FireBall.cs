@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireBall :Ability {
     //ranged, at the start, maxdistance,requires a atarget
-    private const string aName = "FireBall";
+    private const string aName = "FIREBALL";
     private const string aDescription = "A firey mass who make several damage";
     private const float actionPointCost = 3f;
     private const float rangeOfAction = 6f;
@@ -18,13 +18,10 @@ public class FireBall :Ability {
             GameObject go= new GameObject(); //gridtest.instance.getobjatloc
             go.GetComponent<Player>().actionPoint -= actionPointCost;
             go.GetComponent<Player>().health-=BAseEffectDamage;
-          
-        
         }
     }
     public FireBall(List<string> validTargets): base(new BasicObjectInformation(aName,aDescription,actionPointCost,rangeOfAction), validTargets)
     {
-        
         Debug.Log("spell type working Fireball ! ");
     }
 	

@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour {
 
     public void SpellButtonPressed(string spell)
     {
-        AbilityManager.SpellType spellEnum = (AbilityManager.SpellType)System.Enum.Parse(typeof(AbilityManager.SpellType), spell);
+        GV.SPELL_TYPE spellEnum = (GV.SPELL_TYPE)System.Enum.Parse(typeof(GV.SPELL_TYPE), spell);
 
 
         selectedAbiltity = AbilityManager.Instance.SelectAbility(spellEnum);

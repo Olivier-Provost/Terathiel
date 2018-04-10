@@ -5,8 +5,9 @@ using UnityEngine;
 public class AbilityManager
 {
 
-    Dictionary<SpellType, Ability> spellBook;
-    #region
+    Dictionary<GV.SPELL_TYPE, Ability> spellBook;
+
+    #region singleton
     private static AbilityManager instance;
 
     private AbilityManager() {
@@ -26,25 +27,19 @@ public class AbilityManager
     }
     #endregion
 
-    public enum SpellType
-    {
-        FireBall , Healing, Spawn
-    }
-
     private void Initialize() {
         
-        spellBook = new Dictionary<SpellType, Ability>();
+        spellBook = new Dictionary<GV.SPELL_TYPE, Ability>();
 
-        spellBook.Add(SpellType.Healing, new Healing(new List<string>() {"player"}));
-        spellBook.Add(SpellType.FireBall, new FireBall(new List<string>() { "player" }));
-        spellBook.Add(SpellType.Spawn, new SumonSpell(new List<string>() { "nothing" }));
+        spellBook.Add(GV.SPELL_TYPE.HEALING, new Healing(new List<string>() {"player"}));
+        spellBook.Add(GV.SPELL_TYPE.FIREBALL, new FireBall(new List<string>() { "player" }));
+        spellBook.Add(GV.SPELL_TYPE.SPAWN, new SumonSpell(new List<string>() { "nothing" }));
 
 
     } 
 
-    public Ability SelectAbility(SpellType monType)
+    public Ability SelectAbility(GV.SPELL_TYPE monType)
     {
-
         return spellBook[monType];
     }
 
