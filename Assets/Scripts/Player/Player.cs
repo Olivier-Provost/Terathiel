@@ -1,58 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
-public class Player : MonoBehaviour {
+public class Player {
 
-    public GameObject thePlayer;
+    private float ap;
 
-    public float health = 100f;
-    public float actionPoint = 6f;
-    
-    Vector3 position;
-    Vector3 newPos;
-
-    //bool myTurn;
-
-    public void Init() { }
-
-    void Start()
+    public Player()
     {
-        position = new Vector3(3, 3, 0);
+        ap = GV.PLAYERS_MAX_ACTION_POINTS;
     }
 
-    void Update()
+    public void UpdateAP(float _nbAP)
     {
-        if (Input.GetMouseButtonUp(0))
-        {
-            newPos = GridTest.Instance.TileClicked(Input.mousePosition);
-            if ((Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y)) <= 5)
-            {
-                SetPlayerTile(Input.mousePosition);
-                position = newPos;
-            }
-            Debug.Log(Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y));
-        }
+        ap += _nbAP;
     }
 
-    public void SetPlayerTile(Vector3 newPos)
+    public void ResetAP()
     {
-        Vector3 playerPos = newPos;
-        playerPos = GridTest.Instance.TileClicked(playerPos); 
-        playerPos.x += 72.6f;
-        playerPos.y += 19.1f;
-
-        thePlayer.transform.position = playerPos;
+        ap = GV.PLAYERS_MAX_ACTION_POINTS;
     }
 
-    public Vector3 GetPlayerPosition()
+    public float GetAP()
     {
-        return position;
-    }
-
-    public void upDateAP(float cost)
-    {
-        actionPoint -= cost;
+        return ap;
     }
 }

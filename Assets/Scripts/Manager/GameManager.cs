@@ -21,7 +21,7 @@ public class GameManager  {
     }
     #endregion singleton
 
-    private float turnCount = 1;
+    private float gameTurn = 1;
     private float playerWhoPlay = 1;
     private bool isGameEnded = false;
     private Transform player1, player2;
@@ -35,11 +35,6 @@ public class GameManager  {
         player2.GetComponent<Player>().Init();
     }
 
-    public float GetTurnCount()
-    {
-        return turnCount;
-    }
-
     public float GetCurrentPlayer()
     {
         return playerWhoPlay;
@@ -47,19 +42,10 @@ public class GameManager  {
 
     public void NextTurn()
     {
+        playerWhoPlay += 1;
         
-
-        if (playerWhoPlay >= GV.NUMBER_OF_PLAYER)
-        {
-            playerWhoPlay = 1;
-            turnCount += 1;
-        }
-        else
-            playerWhoPlay += 1;
-
-        //InputManager.Instance.NextTurn();
-        PlayerManager.Instance.NextTurn(turnCount);
-      
+        PlayerManager.Instance.EndTurn(gameTurn);
+        GridManager.Instance.EndTurn();
         UIManager.Instance.NextTurn(turnCount, playerWhoPlay);
     }
 }

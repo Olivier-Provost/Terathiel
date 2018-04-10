@@ -7,8 +7,8 @@ public class FireBall :Ability {
     private const string aName = "FIREBALL";
     private const string aDescription = "A firey mass who make several damage";
     private const float actionPointCost = 3f;
-    private const float rangeOfAction = 6f;
-    private const float BAseEffectDamage = 10f;
+    private const float rangeOfAction;
+    private const float BAseEffectDamage;
 
 
     public override void UsedAbility(Vector3 location)

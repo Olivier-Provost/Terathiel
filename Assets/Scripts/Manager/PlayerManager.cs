@@ -31,13 +31,15 @@ public class PlayerManager  {
         players.Add(1f, player_1);
         players.Add(2f, player_2);
     }
-    public void NextTurn(float _turn)
+
+    public void EndTurn(float _turn)
     {
         if (_turn > 1)
-            players[GameManager.Instance.GetCurrentPlayer()].UpdateCoins(GV.NEW_TURN_COINS);
+            players[GameManager.Instance.GetCurrentPlayer()].ResetAP();
     }
+
     public void upDateAP(float cost)
     {
-        players[GameManager.Instance.GetCurrentPlayer()].upDateAP(cost);
+        players[GameManager.Instance.GetCurrentPlayer()].UpdateAP(cost);
     }
 }
