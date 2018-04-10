@@ -24,15 +24,15 @@ public class GameManager  {
     private float turnCount = 1;
     private float playerWhoPlay = 1;
     private bool isGameEnded = false;
-    private transform player1, player2;
+    private Transform player1, player2;
 
     public void Init(Transform _player1, Transform _player2)
     {
         player1 = _player1;
         player2 = _player2;
 
-        player1.GetComponent<>().Init();
-        player2.GetComponent<>().Init();
+        player1.GetComponent<Player>().Init();
+        player2.GetComponent<Player>().Init();
     }
 
     public float GetTurnCount()
