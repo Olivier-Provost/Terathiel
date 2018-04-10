@@ -51,11 +51,11 @@ public class GameManager  {
 
         if (playerWhoPlay >= GV.NUMBER_OF_PLAYER)
         {
-            playerPlaying = 1;
+            playerWhoPlay = 1;
             turnCount += 1;
         }
         else
-            playerPlaying += 1;
+            playerWhoPlay += 1;
 
         //InputManager.Instance.NextTurn();
         PlayerManager.Instance.NextTurn(turnCount);

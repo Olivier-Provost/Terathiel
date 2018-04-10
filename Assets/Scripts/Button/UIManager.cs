@@ -2,21 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour {
+public class UIManager {
+
+    #region singleton
+    private static PlayerManager instance;
+
+    private PlayerManager() { }
+
+    public static PlayerManager Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = new PlayerManager();
+
+            return instance;
+        }
+    }
+    #endregion singleton
+
     Ability selectedAbiltity;
-
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        //Input.GetMouseButtonDown(0);
-        //Input.mousePosition;
-
-	}
 
     public void SpellButtonPressed(string spell)
     {
@@ -26,6 +31,12 @@ public class UIManager : MonoBehaviour {
         selectedAbiltity = AbilityManager.Instance.SelectAbility(spellEnum);
 
         Debug.Log("spell type working " + spell.ToString());
+    }
+
+    public void NextTurn(float _turn)
+    {
+        if (_turn > 1)
+            players[GameManager.Instance.GetCurrentPlayer()].UpdateCoins(GV.NEW_TURN_COINS);
     }
 
 }
