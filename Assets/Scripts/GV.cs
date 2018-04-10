@@ -16,6 +16,7 @@ public class GV {
     public static readonly string SPAWN_TAG = "SpawnRange";
 
     //Players
+    public static readonly int NUMBER_OF_PLAYER = 2;
     public static readonly string PLAYER1_TAG = "Player1";
     public static readonly string PLAYER2_TAG = "Player2";
     public static readonly float PLAYERS_MAX_ACTION_POINTS = 5f;

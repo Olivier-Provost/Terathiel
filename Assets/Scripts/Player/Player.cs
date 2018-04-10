@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 
     //bool myTurn;
 
+    public void Init() { }
+
     void Start()
     {
         position = new Vector3(3, 3, 0);
