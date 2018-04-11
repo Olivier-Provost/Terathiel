@@ -23,10 +23,11 @@ public class UIManager {
 
     Ability selectedAbiltity;
 
+
     public void SpellButtonPressed(string spell)
     {
-        GV.SPELL_TYPE spellEnum = (GV.SPELL_TYPE)System.Enum.Parse(typeof(GV.SPELL_TYPE), spell);
 
+        GV.SPELL_TYPE spellEnum = (GV.SPELL_TYPE)System.Enum.Parse(typeof(GV.SPELL_TYPE), spell);
 
         selectedAbiltity = AbilityManager.Instance.SelectAbility(spellEnum);
 

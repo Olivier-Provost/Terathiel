@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class Player {
 
-    private float ap;
+    int pid;
+    public float ap;
+    public float health;
+    HealthBar healthBar;
 
-    public Player()
+    public Player(int _pid)
     {
+        pid = _pid;
+        healthBar = GameObject.Find("HealthBar" + pid).GetComponent<HealthBar>();
         ap = GV.PLAYERS_MAX_ACTION_POINTS;
+        health = GV.PLAYERS_MAX_LIFE;
     }
 
     public void UpdateAP(float _nbAP)
@@ -24,5 +30,10 @@ public class Player {
     public float GetAP()
     {
         return ap;
+    }
+    
+    public float getHealth()
+    {
+        return health;
     }
 }

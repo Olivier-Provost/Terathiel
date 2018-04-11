@@ -7,8 +7,8 @@ public class FireBall :Ability {
     private const string aName = "FIREBALL";
     private const string aDescription = "A firey mass who make several damage";
     private const float actionPointCost = 3f;
-    private const float rangeOfAction;
-    private const float BAseEffectDamage;
+    private const float rangeOfAction= 2;
+    private const float BAseEffectDamage=2;
 
 
     public override void UsedAbility(Vector3 location)
@@ -16,7 +16,7 @@ public class FireBall :Ability {
         if (CheckValid(location))
         {
             GameObject go= new GameObject(); //gridtest.instance.getobjatloc
-            go.GetComponent<Player>().actionPoint -= actionPointCost;
+            go.GetComponent<Player>().ap -= actionPointCost;
             go.GetComponent<Player>().health-=BAseEffectDamage;
         }
     }
