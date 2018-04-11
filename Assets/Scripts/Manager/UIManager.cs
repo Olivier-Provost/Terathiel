@@ -34,5 +34,8 @@ public class UIManager {
         Debug.Log("spell type working " + spell.ToString());
     }
 
-    
+    public void EndTurn()
+    {
+
+    }
 }

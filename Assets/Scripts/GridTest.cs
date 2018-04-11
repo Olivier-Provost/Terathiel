@@ -28,7 +28,6 @@ public class GridTest  {
     }
     #endregion
     
-    
 
     public Vector3Int TileClicked(Vector3 mousePositionOnClick)
     {
