@@ -36,4 +36,14 @@ public class Player {
     {
         return health;
     }
+
+    public void dommage()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("dommage aply ");
+            health -= 5;
+        }
+    }
+
 }

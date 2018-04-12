@@ -10,13 +10,20 @@ public class PlayerHardcode : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        health = 20;
         maxHealth = GV.PLAYERS_MAX_LIFE;
         maxAp = GV.PLAYERS_MAX_ACTION_POINTS;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        health -= TakesDamage(5);
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+           
+            health -= TakesDamage(5);
+
+            Debug.Log("damage apply" + health);
+        }
 	}
 
     public float TakesDamage(float amount)
