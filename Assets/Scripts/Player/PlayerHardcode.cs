@@ -42,6 +42,16 @@ public class PlayerHardcode : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(health > 0)
+                health -= TakesDamage(5);
+            if (health < 0)
+                health = 0;
+
+            Debug.Log("damage apply" + health);
+        }
+
         if (playerTag == "Player1")
         {
             if (Input.GetKeyUp(KeyCode.W))
@@ -88,9 +98,8 @@ public class PlayerHardcode : MonoBehaviour {
     }
 
 
-    public void TakesDamage(float amount)
+    public float TakesDamage(float amount)
     {
-
-        health -= amount;
+        return amount;
     }
 }
