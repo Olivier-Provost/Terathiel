@@ -8,17 +8,13 @@ public class HealthBar : MonoBehaviour{
     public float current_Health;
     public GameObject healthbar;
     public float calc_health;
-    
     public GameObject go;
 
-    void initializeHealth()
-    {
-        current_Health = go.GetComponent<Player>().getHealth();
-    }
+
 	
 	// Update is called once per frame
 	void Update () {
-        
+         current_Health = go.GetComponent<Player>().getHealth();
         calc_health = current_Health/max_health;
         SetHealthBar(calc_health);
 
