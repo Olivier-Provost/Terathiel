@@ -34,3 +34,4 @@ sysinfo.txt
 *.unitypackage
 Assets/Scripts/Player/Player.cs
 Assets/Scripts/Flow.meta
+Assets/Scene/PlayerUI.unity
