@@ -25,8 +25,8 @@ public class PlayerManager  {
 
     public void Init()
     {
-        Player player_1 = new Player();
-        Player player_2 = new Player();
+        Player player_1 = new Player(1);
+        Player player_2 = new Player(2);
 
         players.Add(1f, player_1);
         players.Add(2f, player_2);

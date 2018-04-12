@@ -14,7 +14,7 @@ public class HealthBar : MonoBehaviour{
 	
 	// Update is called once per frame
 	void Update () {
-         current_Health = go.GetComponent<Player>().getHealth();
+        current_Health = go.GetComponent<Player>().getHealth();
         calc_health = current_Health/max_health;
         SetHealthBar(calc_health);
 
