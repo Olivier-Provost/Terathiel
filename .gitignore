@@ -33,3 +33,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Assets/Scripts/Player/Player.cs
+Assets/Scripts/Flow.meta

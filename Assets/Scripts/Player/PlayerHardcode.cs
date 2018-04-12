@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PlayerHardcode : MonoBehaviour {
 
@@ -10,17 +9,19 @@ public class PlayerHardcode : MonoBehaviour {
     public float maxHealth, maxAp, health, ap;
 
     Transform thePlayer;
-    Vector3 position, newPos;
+    Vector3Int position;
+    Vector3Int startP1, startP2;
 
 	// Use this for initialization
 	void Start () {
 
         health = 20;
 
+        startP1 = new Vector3Int(3, 3, 0);
+        startP2 = new Vector3Int(18, 18, 0);
+
         thePlayer = GetComponent<Transform>();
-
         playerTag = thePlayer.tag;
-
 
         maxHealth = GV.PLAYERS_MAX_LIFE;
         maxAp = GV.PLAYERS_MAX_ACTION_POINTS;
@@ -28,17 +29,15 @@ public class PlayerHardcode : MonoBehaviour {
         switch (playerTag)
         {
             case "Player1":
-                StartPlayerTile(new Vector3Int(3, 3, 0));
+                SetPlayerTile(startP1);
+                position = startP1;
                 break;
             case "Player2":
-                StartPlayerTile(new Vector3Int(18, 18, 0));
+                SetPlayerTile(startP2);
+                position = startP2;
                 break;
         }
-	}
-
-	
-
-
+    }
 
     // Update is called once per frame
     void Update()
@@ -52,26 +51,31 @@ public class PlayerHardcode : MonoBehaviour {
 
             Debug.Log("damage apply" + health);
         }
-        position = thePlayer.transform.position;
 
-        if (Input.GetMouseButtonUp(0))
+        if (playerTag == "Player1")
         {
-            //if (Mathf.Approximately(Input.mousePosition.x, position.x) && Mathf.Approximately(Input.mousePosition.y, position.y))
-            {
-                if (Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y) <= 5)
-                {
-                    SetPlayerTile(Input.mousePosition);
-                    Debug.Log("Tile : " + GridTest.Instance.TileClicked(Input.mousePosition) + " World : " + Input.mousePosition);
-                }
-                newPos = position;
-                Debug.Log(Mathf.Abs(newPos.x - position.x) + Mathf.Abs(newPos.y - position.y));
-            }
+            if (Input.GetKeyUp(KeyCode.W))
+                position.y++;
+            if (Input.GetKeyUp(KeyCode.S))
+                position.y--;
+            if (Input.GetKeyUp(KeyCode.A))
+                position.x--;
+            if (Input.GetKeyUp(KeyCode.D))
+                position.x++;
+            SetPlayerTile(position);
         }
-    }
-
-    public void OnClick(BaseEventData data)
-    {
-        Debug.Log(gameObject.tag);
+        if (playerTag == "Player2")
+        {
+            if (Input.GetKeyUp(KeyCode.UpArrow))
+                position.y++;
+            if (Input.GetKeyUp(KeyCode.DownArrow))
+                position.y--;
+            if (Input.GetKeyUp(KeyCode.LeftArrow))
+                position.x--;
+            if (Input.GetKeyUp(KeyCode.RightArrow))
+                position.x++;
+            SetPlayerTile(position);
+        }
     }
 
     public void SetPlayerTile(Vector3 newPos)
@@ -84,7 +88,7 @@ public class PlayerHardcode : MonoBehaviour {
         thePlayer.transform.position = playerPos;
     }
 
-    public void StartPlayerTile(Vector3Int tile)
+    public void SetPlayerTile(Vector3Int tile)
     {
         Vector3 startPos = tile;
         startPos.x += 75.5f;
