@@ -13,20 +13,20 @@ public class HealthBar : MonoBehaviour{
     private void Start()
     {
         current_Health = go.GetComponent<PlayerHardcode>().health;
-        max_health = go.GetComponent<PlayerHardcode>().maxHealth;
+        max_health = GV.PLAYERS_MAX_LIFE;
     }
 
 
     // Update is called once per frame
     void Update () {
-
+        
         current_Health = go.GetComponent<PlayerHardcode>().health;
-
+        Debug.Log("curent health : " + current_Health + " maxHealth : " + max_health);
         if (max_health != 0 && current_Health >= 0)
-            calc_health = current_Health/max_health;///max_health;
+            calc_health = current_Health/max_health;
         Debug.Log("curent health : " + current_Health + " maxHealth : " + max_health);
         SetHealthBar(calc_health);
-        //go.GetComponent<Player>().dommage();
+        
 
 	}
     
