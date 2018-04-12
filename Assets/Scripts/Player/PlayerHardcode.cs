@@ -14,14 +14,14 @@ public class PlayerHardcode : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-<<<<<<< HEAD
+
         health = 20;
-=======
+
         thePlayer = GetComponent<Transform>();
 
         playerTag = thePlayer.tag;
 
->>>>>>> cc2bcf82ab6bcbb19040009cf678ee2cfe907b27
+
         maxHealth = GV.PLAYERS_MAX_LIFE;
         maxAp = GV.PLAYERS_MAX_ACTION_POINTS;
 
@@ -35,23 +35,23 @@ public class PlayerHardcode : MonoBehaviour {
                 break;
         }
 	}
-<<<<<<< HEAD
-	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-           
-            health -= TakesDamage(5);
 
-            Debug.Log("damage apply" + health);
-        }
-	}
-=======
+	
+
+
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if(health > 0)
+                health -= TakesDamage(5);
+            if (health < 0)
+                health = 0;
+
+            Debug.Log("damage apply" + health);
+        }
         position = thePlayer.transform.position;
 
         if (Input.GetMouseButtonUp(0))
@@ -92,7 +92,7 @@ public class PlayerHardcode : MonoBehaviour {
 
         thePlayer.transform.position = startPos;
     }
->>>>>>> cc2bcf82ab6bcbb19040009cf678ee2cfe907b27
+
 
     public float TakesDamage(float amount)
     {
