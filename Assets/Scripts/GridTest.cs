@@ -27,7 +27,6 @@ public class GridTest  {
         }
     }
     #endregion
-    
 
     public Vector3Int TileClicked(Vector3 mousePositionOnClick)
     {
@@ -39,5 +38,16 @@ public class GridTest  {
         tilePos = tm.WorldToCell(mp);
 
         return tilePos;
+    }
+
+    public Vector3 TileToWorld(Vector3Int tileSelected)
+    {
+        Vector3 tile;
+
+        tile = tm.CellToLocal(tileSelected);
+
+        Debug.Log("Tile : " + tileSelected + " World : " + tile);
+
+        return tile;
     }
 }
