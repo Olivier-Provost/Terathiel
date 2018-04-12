@@ -15,7 +15,7 @@ public class Healing : Ability
         if (CheckValid(location))
         {
             GameObject go = new GameObject(); //gridtest.instance.getobjatloc
-            go.GetComponent<Player>().actionPoint -= actionPointCost;
+            go.GetComponent<Player>().ap -= actionPointCost;
             go.GetComponent<Player>().health += baseEffectHealing;
         }
     }

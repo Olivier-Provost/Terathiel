@@ -31,8 +31,8 @@ public class GameManager  {
         player1 = _player1;
         player2 = _player2;
 
-        player1.GetComponent<Player>().Init();
-        player2.GetComponent<Player>().Init();
+        player1.GetComponent<PlayerManager>().Init();
+        player2.GetComponent<PlayerManager>().Init();
     }
 
     public float GetCurrentPlayer()
@@ -46,6 +46,6 @@ public class GameManager  {
         
         PlayerManager.Instance.EndTurn(gameTurn);
         GridManager.Instance.EndTurn();
-        UIManager.Instance.NextTurn(turnCount, playerWhoPlay);
+       // UIManager.Instance.NextTurn(turnCount, playerWhoPlay);
     }
 }
